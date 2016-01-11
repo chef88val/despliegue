@@ -5,7 +5,7 @@
 </head> 
 <body>
 
-<h1>Icono del día</h1>
+<h1>Produccion</h1>
 <h1>Hola usuario</h1>
 
 <img src="randomicon.php"/>
