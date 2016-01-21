@@ -1,22 +1,13 @@
 <?php 
 
 $payload= json_decode($_POST['payload']);
-$shellOutput = [];
-    exec('git branch | ' . "grep ' * '", $shellOutput);
-    foreach ($shellOutput as $line) {
-        if (strpos($line, '* ') !== false) {
-            return trim(strtolower(str_replace('* ', '', $line)));
-        }
-    }
-    return null;
 
-
-if($payload->ref && $payload->branch==="master")
+if(isset($_POST['payload']))
 {
-print("1");
+print("Existe payload");
 }	else
 	{
-print("2");
+print("No existe payload");print("A".$payload->master_branch."A");shell_exec('sh ./PUESTA_EN_PRODUCCION.sh');print("MAL");
 	}
 
 
