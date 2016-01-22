@@ -80,6 +80,7 @@ function run() {
 try {
     if (!isset($_POST['payload'])) {
         echo "Works fine.";
+        echo "A-".$_POST['payload']."-A";
     } else {
         run();
     }
