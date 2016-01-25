@@ -4,6 +4,16 @@ echo("AA");
 $branch = "develop * master";
 $nombre_fichero = './PUESTA_EN_PRODUCCION.sh';
 
+
+if($_POST['payload']){
+	echo ("Payload");
+	$payload= json_decode($_POST['payload']);
+	$payload->ref;
+	//shell_exec(' sh ./PUESTA_EN_PRODUCCION.sh');
+	}else{
+		echo ("NOT Payload");
+}
+
 if (strpos($branch, '* master')) {
 	echo("Está seleccionado master");
 	
@@ -16,7 +26,7 @@ if (strpos($branch, '* master')) {
 			
 		}else {
 			echo("A".$sh);
-			echo("Well done2");
+			echo("Well done2");			
 		}
 	}else {
 		echo("El fichero no existe");
