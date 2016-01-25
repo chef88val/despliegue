@@ -1,21 +1,37 @@
 <?php
 echo("AA");
-$branch = shell_exec('git branch');
+//$branch = shell_exec('git branch');
+$branch = "develop * master";
+$nombre_fichero = './PUESTA_EN_PRODUCCION.sh';
 
 if (strpos($branch, '* master')) {
-echo("Está seleccionado master");
-
-$sh=shell_exec('sh ./PUESTA_EN_PRODUCCION.sh');	
-if ($sh !=0) {
-echo("Ha ocurrido un problema");
+	echo("Está seleccionado master");
 	
-}
-else {
-	echo("Well done");
-}
+	if (file_exists($nombre_fichero)) {
+	
+		$sh="as";//shell_exec(' sh ./PUESTA_EN_PRODUCCION.sh');
+		
+		if ($sh !=0) {
+			echo("Ha ocurrido un problema");
+			
+		}else {
+			echo("A".$sh);
+			echo("Well done2");
+		}
+	}else {
+		echo("El fichero no existe");
+	}
 }else {
 	echo("NO seleccionado master");
 }
-
-
+/*
+echo("Conexion fallida");
+$connection = ssh2_connect('shell.example.com', 22);
+echo("Conexion 2");
+if (ssh2_auth_password($connection, 'jscmdesp', 'B.lack14')) {
+  echo "Authentication Successful!\n";
+} else {
+echo("Conexion fallida");
+  die('Authentication Failed...');
+}*/
 ?>
