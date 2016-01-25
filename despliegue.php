@@ -1,5 +1,5 @@
 <?php
-//Fichero Despliegue.php
+//Fichero despliegue.php
 echo("AA");
 //$branch = shell_exec('git branch');
 $branch = "develop * master";
